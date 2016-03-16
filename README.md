@@ -10,4 +10,5 @@ Recommended instructions:
 Don't forget to set your connection vars (merchantId + apiKey) before initialising the class!  
 See example.php for all API functions :)
 
+
 Have fun!
