@@ -9,6 +9,7 @@ Recommended instructions:
 3. include \lib\PayVida\gateway.php  
 
 See example.php for all API functions
+
 Don't forget to set your correct demo/live credentials!
 
 
