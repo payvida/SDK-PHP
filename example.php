@@ -15,7 +15,11 @@
 # Fill in your Dev or Live Credentials
 $merchantId = '';
 $apiKey = '';
-$gatewayUrl = 'https://demo.payvida.ca/api/';  
+$gatewayUrl = '';  
+
+
+
+
 
 
 require_once('Payvida/gateway.php');
