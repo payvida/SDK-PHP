@@ -14,9 +14,9 @@
 
 
 # Fill in your Dev or Live Credentials
-$gatewayUrl = 'https://dev.gopayvida.com/api/';  
-$merchantId = '007975';
-$apiKey = 'keJadTO4f7bttC8pjKsWEMdscXEL61Jq';
+$gatewayUrl = '';  
+$merchantId = '';
+$apiKey = '';
 
 
 
