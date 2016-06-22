@@ -119,11 +119,11 @@ $payment_data = array(
 
 
 # Make Payment with a Token for $99.00
-//$result = $payvida->ccsale($payment_token_data, $amount);   
+//$result = $payvida->ccsale($payment_token_data);   
 
 
 # Make Pre-Auth with a Token for $99.00
-//$result = $payvida->ccauthonly($payment_token_data, $amount);   
+//$result = $payvida->ccauthonly($payment_token_data);   
 
 
 
