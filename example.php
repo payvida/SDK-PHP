@@ -17,6 +17,13 @@
 $gatewayUrl = '';  
 $merchantId = '';
 $apiKey = '';
+<<<<<<< HEAD
+=======
+$gatewayUrl = '';  
+
+
+
+>>>>>>> origin/master
 
 
 
@@ -28,6 +35,7 @@ $payvida = new \Payvida\Gateway($merchantId, $apiKey, $gatewayUrl);
 
 
 
+<<<<<<< HEAD
 
 # Get Card Token 
 $get_token_data =  array(
@@ -112,6 +120,74 @@ $payment_data = array(
   );
 //$result = $payvida->ccsale($payment_token_data);
 
+=======
+# Data for Credit-card payment
+$payment_card_data = array(
+					  
+			'card_name' => 'Test Card',
+			'card_number' => '6011500080009080',
+			'card_expiry_date' => '0620',
+			'card_cvv' => '123',
+			
+			# I've included billing fields but they are not required
+			'billing_name'  => 'Test Testerson',
+			'billing_company_name'  => 'PayVida',
+			'billing_address1'  => '123 Fake Street',
+			'billing_address2' => '',
+			'billing_postal_zip' => 'T2Y 4M3',
+			'billing_city' => 'Kelowna',
+			'billing_province_state' => 'BC',
+			'billing_country' => 'CAN',
+			'billing_phone' => '555-123-4567',
+			'billing_email' => 'totallyvalid@emailaddress.com',
+			
+			# I've included shipping fields but they are not required
+			'shipping_name'  => 'Hank Scorpio',
+			'shipping_company_name'  => 'Globex Corp.',
+			'shipping_address1'  => '1111 Volcano Lair',
+			'shipping_address2' => '',
+			'shipping_postal_zip' => 'T1X CB4',
+			'shipping_city' => 'Cypress Creek',
+			'shipping_province_state' => 'BC',
+			'shipping_country' => 'CAN',
+			'shipping_phone' => '555-123-45678',
+			'shipping_email' => 'hank@globexcorp.com'
+			
+			);
+
+
+
+# Data for Tokenization 
+$get_token_data =  array(
+			'card_name' => 'Test Card',
+			'card_number' => '6011500080009080',
+			'card_expiry_date' => '0620',
+			'card_cvv' => '123',
+			
+			# I've included billing fields but they are not required
+			'billing_name'  => 'Test Testerson',
+			'billing_company_name'  => 'PayVida',
+			'billing_address1'  => '123 Fake Street',
+			'billing_address2' => '',
+			'billing_postal_zip' => 'T2Y 4M3',
+			'billing_city' => 'Kelowna',
+			'billing_province_state' => 'BC',
+			'billing_country' => 'CAN',
+			'billing_phone' => '555-123-4567',
+			'billing_email' => 'totallyvalid@emailaddress.com'
+			);
+
+
+# Data for Update token
+$token_update_data = array(	'card_token' => '9318222095339080',  
+				'card_expiry_date' => '0320'
+			  );
+
+# Data for Token Payment
+$payment_token_data = array(
+				'card_token' => '9318222095339080'
+			   );
+>>>>>>> origin/master
 
 
 # Pre-Auth a Credit-Card for $25.00
