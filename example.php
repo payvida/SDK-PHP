@@ -67,7 +67,7 @@ $token_update_data = array(
 # Credit-Card Sale with Data
 $payment_data = array(
 					
-					'amount' => 25.00,
+					'amount' => '25.00',
 					
 					'card_name' => 'Test Card',
 					'card_number' => '342400001000180',
@@ -107,7 +107,7 @@ $payment_data = array(
 
 # Credit-Card sale with Token
  $payment_token_data = array(
-				'amount' => 25.00,
+				'amount' => '25.00',
 				'card_token' => '9036502847831117'
   );
 //$result = $payvida->ccsale($payment_token_data);
