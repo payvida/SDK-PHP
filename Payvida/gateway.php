@@ -16,10 +16,11 @@ class Gateway {
 	
 	/**
 	 * Constructor
-	 * Set basic config vars + enpoint
+	 * Set basic config vars + endpoint
 	 * 
 	 * @param string $merchantId Merchant ID
 	 * @param string $apiKey API Access Passcode
+	 * @param string $endpoint API Url (Gateway Url)
 	 */
 	 
 	public function __construct($merchantId, $apiKey, $endpoint) {
@@ -37,6 +38,13 @@ class Gateway {
 		
 	}
 	
+	
+	
+	
+		
+	#	
+	#	TRANSACTIONS
+	#	
 	
 	public function ccGetToken($data)  {
 		$data['action'] = "ccgettoken";
@@ -118,6 +126,47 @@ class Gateway {
 	
 	
 	
+		
+	#	
+	#	CUSTOMERS
+	#	
+	public function addCustomer($data)  {
+		
+		$data['action'] = "addCustomer";
+		return $this->request($data);
+		
+	}
+	
+	public function updateCustomer($data) {
+		$data['action'] = "updateCustomer";
+		return $this->request($data);
+	}
+	
+	public function addCard($data) {
+		$data['action'] = "addCard";
+		return $this->request($data);
+	}
+	
+	public function updateCard($data) {
+		$data['action'] = "updateCard";
+		return $this->request($data);
+	}
+	
+	
+	
+	#	
+	#	SUBSCRIPTIONS
+	#	
+		
+	public function createSubscription($data) {
+		$data['action'] = "createSubscription";
+		return $this->request($data);
+	}
+	
+	public function subscribeCustomer($data) {
+		$data['action'] = "subscribeCustomer";
+		return $this->request($data);
+	}
 	
 	
 	
