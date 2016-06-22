@@ -58,13 +58,9 @@ class Gateway {
 	
 	
 	
-	public function ccSale($data, $amount='')  {
+	public function ccSale($data)  {
 		
-		
-		if (!$amount) throw new Exception('Amount cannot be empty when attempting to process a transaction!');
-		$data['amount'] = $amount;
-		
-		
+	
 		//If using a token, unset any cc vars they may have sent by mistake
 		if (!empty($data['token'])) {
 			unset($data['card_number']);
@@ -79,13 +75,9 @@ class Gateway {
 	
 	
 	
-	public function ccAuthOnly($data, $amount='')  {
+	public function ccAuthOnly($data)  {
 		
-		
-		if (!$amount) throw new Exception('Amount cannot be empty when performing a pre-authorization!');
-		$data['amount'] = $amount;
-		
-		
+
 		//If using a token, unset any cc vars they may have sent by mistake
 		if (!empty($data['token'])) {
 			unset($data['card_number']);
