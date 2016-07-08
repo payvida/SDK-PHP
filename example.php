@@ -8,7 +8,10 @@
   
   
   This file contains examples of all API functions
-  Uncomment the //$result line to see the results of that particular action
+  Uncomment any $result variable to see the results of that particular action
+  
+  IMPORTANT NOTE:
+  The API returns a JSON encoded array. We use json_decode to convert it to an associative array before printing the output (see last function in this file)
   
 */
 
@@ -16,18 +19,19 @@
 # Fill in your Dev or Live Credentials
 $gatewayUrl = 'https://dev.gopayvida.com/api/';  
 $merchantId = '007975';
-$apiKey = 'keJadTO4f7bttC8pjKsWEMdscXEL61Jq';
+$apiKey = 'DWf1qr8zxRxA7EeAN31G8czSdP6pKY6o';
 
 
 
 require_once('Payvida/gateway.php');
-
 
 # Initiatialize PayVida Object
 $payvida = new \Payvida\Gateway($merchantId, $apiKey, $gatewayUrl);
 
 
 
+
+//-------- Data Examples
 
 # Get Card Token 
 $get_token_data =  array(
@@ -48,7 +52,7 @@ $get_token_data =  array(
 						'billing_phone' => '555-123-4567',
 						'billing_email' => 'totallyvalid@emailaddress.com'
 					);
-$result = $payvida->ccgettoken($get_token_data);   
+//$result = $payvida->ccgettoken($get_token_data);   
 
 
 
@@ -67,13 +71,13 @@ $token_update_data = array(
 # Credit-Card Sale with Data
 $payment_data = array(
 					
-					'amount' => '25.00',
+					'amount' => '100.00',
 					
 					'card_name' => 'Test Card',
-					'card_number' => '342400001000180',
+					'card_number' => '4111111111111111',
 					'card_expiry_date' => '0620',
-					'card_cvv' => '1234',
-					
+
+
 					# I've included billing fields but they are not required
 					'billing_name'  => 'Test Testerson',
 					'billing_company_name'  => 'PayVida',
@@ -85,6 +89,7 @@ $payment_data = array(
 					'billing_country' => 'CAN',
 					'billing_phone' => '555-123-4567',
 					'billing_email' => 'totallyvalid@emailaddress.com',
+					
 					
 					# I've included shipping fields but they are not required
 					'shipping_name'  => 'Hank Scorpio',
@@ -100,8 +105,6 @@ $payment_data = array(
 					
 				);
 //$result = $payvida->ccsale($payment_data); 
-
-
 
 
 
@@ -128,19 +131,21 @@ $payment_data = array(
 
 
 # Complete a Pre-auth  (Use the transaction ID you got from the Make pre-auth function above)
-$txn_id = '150316A15-18EA7730-C671-40E0-BB96-958DEEC5A3D0';
+# Example txn_id = '220616A15-27D22C07-1394-4BC3-A04A-1DAF81BCE1F0';
+$txn_id = '';
 //$result = $payvida->cccomplete($txn_id);
+
 
 
 # Return a Transaction
 
-$txn_id = '150316A15-18EA7730-C671-40E0-BB96-958DEEC5A3D0';
-//$amount = "25.00";    //Optional amount for partial refund
+$txn_id = '220616A15-27D22C07-1394-4BC3-A04A-1DAF81BCE1F0';
+$amount = "50.00";    //Optional amount for partial refund
 //$result = $payvida->ccreturn($txn_id, $amount);
 
 
 # Void a Transaction 
-$txn_id = '150316A15-18EA7730-C671-40E0-BB96-958DEEC5A3D0';
+//$txn_id = '220616A15-C0F373BA-DB1C-42F7-9F78-D31FDFB58F29';
 //$result = $payvida->ccvoid($txn_id);
 
 
@@ -161,7 +166,7 @@ $add_customer =  array(
 
 # Update a Customer Record
 $update_customer =  array(
-					'customer_id' => '63',
+					'customer_id' => '65',  //Get it from the function above!
 					'billing_name' => 'New Name',
 					'billing_email' => 'new@validemail.com',
 					);
@@ -208,20 +213,14 @@ $new_subscription = array(
 
 # Subscribe a customer
 $subscription_data = array(
-						   'subscription_id' => '38',
-						   'customer_id' => '63',
-						   'card_token' => '8091069978011004',
-						   'start' => '06/22/2016',
+						   'subscription_id' => '42',
+						   'customer_id' => '81',
+						   'card_token' => '7595301425001111',
+						   'start' => '07/06/2016',
 						   'end' => '04/01/2017'  //leave empty to re-bill forever optional
 						   );
 
 //$result = $payvida->subscribeCustomer($subscription_data);
-
-
-
-
-
-
 
 
 
