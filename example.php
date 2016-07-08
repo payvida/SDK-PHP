@@ -16,10 +16,10 @@
 */
 
 
-# Fill in your Dev or Live Credentials
-$gatewayUrl = 'https://dev.gopayvida.com/api/';  
-$merchantId = '007975';
-$apiKey = 'DWf1qr8zxRxA7EeAN31G8czSdP6pKY6o';
+# Fill in your Demo or Live Credentials
+$gatewayUrl = 'https://demo.getpayvida.com/api/';  
+$merchantId = '';
+$apiKey = '';
 
 
 
