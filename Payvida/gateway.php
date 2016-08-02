@@ -165,6 +165,16 @@ class Gateway {
 	
 	
 	
+	#	
+	#	HOSTED CHECKOUT
+	#	
+		
+	public function createCheckoutPage($data) {
+		$data['action'] = "createCheckoutPage";
+		return $this->request($data);
+	}
+	
+	
 	
 	/**
 	 * Sends request payload to API via CURL
@@ -176,6 +186,11 @@ class Gateway {
 		
 		$data['merchantid'] = $this->merchantId;
 		$data['apikey'] = $this->apiKey;
+		
+		
+		// ** Convert to string if creating a checkout page due to the multi-dimensional arrays for custom items, and custom data
+		if ($data['action'] == "createCheckoutPage");
+		$data = http_build_query($data);
 		
 
 		$ch = curl_init();    								

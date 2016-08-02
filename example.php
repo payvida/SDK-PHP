@@ -224,6 +224,42 @@ $subscription_data = array(
 
 
 
+# Create a Checkout Page 
+$checkout_page_data = array(
+							'amount' => '25.00',
+							'sub'=> "75.00",
+							'tax'=> "25.00",
+							
+							'short_description'=> "Web coding.",
+							
+							'allow_receipt'=> "1",
+							'require_billing'=> "1",
+							'require_shipping'=> "1",
+							
+							'cancel_url'=> "https://www.mywebsite.com/cancel.php",
+							'success_url'=> "https://www.mywebsite.com/thank-you.php",
+							'notify_url'=> "https://dev.gopayvida.com/checkout/listener.php",
+							
+							
+							//Custom array of item(s) (displayed to customer only, not sent to notify_url)
+							//example array( 'ITEM NAME' => 'Valid amount');
+							'item' => array( 'test_item' => '25.00',
+											 'test_item2' => '25.00',
+											 'test_item3'=> '25.00'
+											),
+							
+							//Custom Data that will be sent to notify_url
+							//example array( 'Customer Var' => 'Value');
+							'data' => array( 'customer_id'=> '25',
+										     'timestamp' => time()
+										   )
+							);
+
+#$result = $payvida->createCheckoutPage($checkout_page_data);
+
+
+
+
 
 /* PARSE RESULTS */
 // Show pretty array
